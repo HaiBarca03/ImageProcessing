@@ -1,0 +1,40 @@
+# Th? m?c build & output
+bin/
+obj/
+Debug/
+Release/
+
+# File c?u hình ng??i dùng
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vs/
+
+# Th? vi?n cài b?ng NuGet (có th? restore l?i)
+packages/
+*.nupkg
+project.lock.json
+project.assets.json
+
+# File t?m c?a h? th?ng
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+.idea/
+.vscode/
+
+# Các file log và backup
+*.log
+*.bak
+*.orig
+
+# File database SQLite (n?u có)
+*.db
+*.sqlite
+*.sqlite3
+
+# Các file thi?t l?p c?a Visual Studio
+.vs/
