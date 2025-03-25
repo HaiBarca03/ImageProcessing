@@ -56,6 +56,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.btnReconvert = new System.Windows.Forms.Button();
+            this.btnLoadConvo = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSource)).BeginInit();
             this.SuspendLayout();
@@ -142,6 +146,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnReset);
+            this.groupBox1.Controls.Add(this.btnReconvert);
+            this.groupBox1.Controls.Add(this.btnLoadConvo);
             this.groupBox1.Location = new System.Drawing.Point(30, 463);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1104, 130);
@@ -290,6 +297,38 @@
             // 
             this.openFileDialog.FileName = "openFileDialog1";
             // 
+            // btnReconvert
+            // 
+            this.btnReconvert.Location = new System.Drawing.Point(987, 63);
+            this.btnReconvert.Name = "btnReconvert";
+            this.btnReconvert.Size = new System.Drawing.Size(101, 38);
+            this.btnReconvert.TabIndex = 14;
+            this.btnReconvert.Text = "ReConvert";
+            this.btnReconvert.UseVisualStyleBackColor = true;
+            this.btnReconvert.Click += new System.EventHandler(this.btnReconvert_Click);
+            // 
+            // btnLoadConvo
+            // 
+            this.btnLoadConvo.Location = new System.Drawing.Point(987, 19);
+            this.btnLoadConvo.Name = "btnLoadConvo";
+            this.btnLoadConvo.Size = new System.Drawing.Size(101, 38);
+            this.btnLoadConvo.TabIndex = 13;
+            this.btnLoadConvo.Text = "Convert";
+            this.btnLoadConvo.UseVisualStyleBackColor = true;
+            this.btnLoadConvo.Click += new System.EventHandler(this.btnLoadConvo_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.Color.Red;
+            this.btnReset.Location = new System.Drawing.Point(883, 19);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(98, 38);
+            this.btnReset.TabIndex = 15;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // frmBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -323,6 +362,7 @@
             this.Controls.Add(this.label7);
             this.Name = "frmBase";
             this.Text = "frmBase";
+            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picResult)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSource)).EndInit();
             this.ResumeLayout(false);
@@ -360,5 +400,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.Button btnReconvert;
+        private System.Windows.Forms.Button btnLoadConvo;
+        private System.Windows.Forms.Button btnReset;
     }
 }

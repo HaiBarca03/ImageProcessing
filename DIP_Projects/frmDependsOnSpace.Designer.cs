@@ -28,17 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnLoadConvo = new System.Windows.Forms.Button();
             this.btnVertical = new System.Windows.Forms.Button();
             this.btnHorizontal = new System.Windows.Forms.Button();
             this.btnFilterMid = new System.Windows.Forms.Button();
             this.btnFilterMean = new System.Windows.Forms.Button();
             this.btnFilterMidByNearK = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtKValue = new System.Windows.Forms.TextBox();
-            this.txtThreshold = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtThreshold = new System.Windows.Forms.TextBox();
+            this.txtKValue = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSource)).BeginInit();
@@ -52,17 +51,6 @@
             this.groupBox1.Controls.Add(this.btnFilterMid);
             this.groupBox1.Controls.Add(this.btnHorizontal);
             this.groupBox1.Controls.Add(this.btnVertical);
-            this.groupBox1.Controls.Add(this.btnLoadConvo);
-            // 
-            // btnLoadConvo
-            // 
-            this.btnLoadConvo.Location = new System.Drawing.Point(922, 43);
-            this.btnLoadConvo.Name = "btnLoadConvo";
-            this.btnLoadConvo.Size = new System.Drawing.Size(101, 38);
-            this.btnLoadConvo.TabIndex = 0;
-            this.btnLoadConvo.Text = "Reset";
-            this.btnLoadConvo.UseVisualStyleBackColor = true;
-            this.btnLoadConvo.Click += new System.EventHandler(this.btnLoadConvo_Click);
             // 
             // btnVertical
             // 
@@ -128,19 +116,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lọc TB Gần K";
             // 
-            // txtKValue
+            // label11
             // 
-            this.txtKValue.Location = new System.Drawing.Point(71, 24);
-            this.txtKValue.Name = "txtKValue";
-            this.txtKValue.Size = new System.Drawing.Size(58, 20);
-            this.txtKValue.TabIndex = 6;
-            // 
-            // txtThreshold
-            // 
-            this.txtThreshold.Location = new System.Drawing.Point(71, 74);
-            this.txtThreshold.Name = "txtThreshold";
-            this.txtThreshold.Size = new System.Drawing.Size(58, 20);
-            this.txtThreshold.TabIndex = 7;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(19, 78);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(45, 13);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Ngưỡng";
             // 
             // label10
             // 
@@ -151,14 +134,19 @@
             this.label10.TabIndex = 8;
             this.label10.Text = "Số K";
             // 
-            // label11
+            // txtThreshold
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(19, 78);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(45, 13);
-            this.label11.TabIndex = 9;
-            this.label11.Text = "Ngưỡng";
+            this.txtThreshold.Location = new System.Drawing.Point(71, 74);
+            this.txtThreshold.Name = "txtThreshold";
+            this.txtThreshold.Size = new System.Drawing.Size(58, 20);
+            this.txtThreshold.TabIndex = 7;
+            // 
+            // txtKValue
+            // 
+            this.txtKValue.Location = new System.Drawing.Point(71, 24);
+            this.txtKValue.Name = "txtKValue";
+            this.txtKValue.Size = new System.Drawing.Size(58, 20);
+            this.txtKValue.TabIndex = 6;
             // 
             // frmDependsOnSpace
             // 
@@ -178,8 +166,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnLoadConvo;
         private System.Windows.Forms.Button btnHorizontal;
         private System.Windows.Forms.Button btnVertical;
         private System.Windows.Forms.Button btnFilterMid;

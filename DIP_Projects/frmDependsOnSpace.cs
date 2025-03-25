@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,22 +33,7 @@ namespace DIP_Projects
             { -1,  0,  1 },
             { -1,  0,  1 }
         };
-        private Bitmap ConvertToGrayscale(Bitmap img)
-        {
-            Bitmap grayImage = new Bitmap(img.Width, img.Height);
-
-            for (int x = 0; x < img.Width; x++)
-            {
-                for (int y = 0; y < img.Height; y++)
-                {
-                    Color originalColor = img.GetPixel(x, y);
-                    int gray = (originalColor.R + originalColor.G + originalColor.B) / 3;
-                    grayImage.SetPixel(x, y, Color.FromArgb(gray, gray, gray));
-                }
-            }
-            return grayImage;
-        }
-
+        
         private Bitmap ApplyConvolution(Bitmap img, int[,] kernel)
         {
             int width = img.Width;
@@ -78,18 +65,6 @@ namespace DIP_Projects
                 }
             }
             return result;
-        }
-
-        private void btnLoadConvo_Click(object sender, EventArgs e)
-        {
-            if (_imgSource == null)
-            {
-                MessageBox.Show("Vui lòng chọn ảnh trước!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            _imgSource = ConvertToGrayscale(_imgSource);
-            picResult.Image = _imgSource;
         }
 
         private void btnVertical_Click(object sender, EventArgs e)

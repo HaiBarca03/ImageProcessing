@@ -64,6 +64,12 @@
     <Compile Include="frmDependsOnSpace.Designer.cs">
       <DependentUpon>frmDependsOnSpace.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSpaceIndependent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSpaceIndependent.Designer.cs">
+      <DependentUpon>frmSpaceIndependent.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmThresholdSeparation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDependsOnSpace.resx">
       <DependentUpon>frmDependsOnSpace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSpaceIndependent.resx">
+      <DependentUpon>frmSpaceIndependent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThresholdSeparation.resx">
       <DependentUpon>frmThresholdSeparation.cs</DependentUpon>
