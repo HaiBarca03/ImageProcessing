@@ -16,7 +16,7 @@ namespace DIP_Projects
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSpaceIndependent());
+            Application.Run(new frmDependsOnSpace());
         }
     }
 }

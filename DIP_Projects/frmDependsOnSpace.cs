@@ -33,7 +33,35 @@ namespace DIP_Projects
             { -1,  0,  1 },
             { -1,  0,  1 }
         };
-        
+
+        private readonly int[,] kernelH3 =
+        {
+            { 0, 1, 1 },
+            { -1, 0, 1 },
+            { -1, -1, 0 }
+        };
+
+        private readonly int[,] kernelH4 =
+{
+            { -1, -1, 0 },
+            { -1, 0, 1 },
+            { 0, 1, 1 }
+        };
+
+        private readonly int[,] kernelSx =
+        {
+            { -1,  0,  1 },
+            { -2,  0,  2 },
+            { -1,  0,  1 }
+        };
+
+        private readonly int[,] kernelSy =
+                {
+            { -1, -2, -1 },
+            {  0,  0,  0 },
+            {  1,  2,  1 }
+        };
+
         private Bitmap ApplyConvolution(Bitmap img, int[,] kernel)
         {
             int width = img.Width;
@@ -88,6 +116,54 @@ namespace DIP_Projects
             }
 
             _imgResult = ApplyConvolution(_imgSource, kernelH1);
+            picResult.Image = _imgResult;
+        }
+
+        private void btnLeftPath_Click(object sender, EventArgs e)
+        {
+            if (_imgSource == null)
+            {
+                MessageBox.Show("Vui lòng chọn ảnh trước!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            _imgResult = ApplyConvolution(_imgSource, kernelH3);
+            picResult.Image = _imgResult;
+        }
+
+        private void btnRightPath_Click(object sender, EventArgs e)
+        {
+            if (_imgSource == null)
+            {
+                MessageBox.Show("Vui lòng chọn ảnh trước!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            _imgResult = ApplyConvolution(_imgSource, kernelH4);
+            picResult.Image = _imgResult;
+        }
+
+        private void btnConvoSy_Click(object sender, EventArgs e)
+        {
+            if (_imgSource == null)
+            {
+                MessageBox.Show("Vui lòng chọn ảnh trước!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            _imgResult = ApplyConvolution(_imgSource, kernelSy);
+            picResult.Image = _imgResult;
+        }
+
+        private void btnConvoSx_Click(object sender, EventArgs e)
+        {
+            if (_imgSource == null)
+            {
+                MessageBox.Show("Vui lòng chọn ảnh trước!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            _imgResult = ApplyConvolution(_imgSource, kernelSx);
             picResult.Image = _imgResult;
         }
 
@@ -232,6 +308,56 @@ namespace DIP_Projects
                 int threshold = Convert.ToInt32(txtThreshold.Text);
 
                 _imgResult = ApplyKNearestMeanFilter(_imgSource, k, threshold);
+                picResult.Image = _imgResult;
+            }
+        }
+
+        private Bitmap ApplyLocalMeanEdgeDetection(Bitmap img, int windowSize, int threshold)
+        {
+            int width = img.Width;
+            int height = img.Height;
+            Bitmap result = new Bitmap(width, height);
+
+            int offset = windowSize / 2;
+
+            for (int x = offset; x < width - offset; x++)
+            {
+                for (int y = offset; y < height - offset; y++)
+                {
+                    int sum = 0;
+                    int count = 0;
+
+                    for (int i = -offset; i <= offset; i++)
+                    {
+                        for (int j = -offset; j <= offset; j++)
+                        {
+                            Color pixel = img.GetPixel(x + i, y + j);
+                            sum += pixel.R;
+                            count++;
+                        }
+                    }
+                    int meanGray = sum / count;
+
+                    Color centerPixel = img.GetPixel(x, y);
+                    int gray = centerPixel.R;
+                    if (Math.Abs(gray - meanGray) > threshold)
+                    {
+                        result.SetPixel(x, y, Color.White);
+                    }
+                    else
+                    {
+                        result.SetPixel(x, y, Color.Black);
+                    }
+                }
+            }
+            return result;
+        }
+
+        private void btnLocalAve_Click(object sender, EventArgs e)
+        {
+            if (_imgSource != null)
+            {
+                _imgResult = ApplyLocalMeanEdgeDetection(_imgSource, 3, 15);
                 picResult.Image = _imgResult;
             }
         }

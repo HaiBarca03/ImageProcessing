@@ -34,6 +34,7 @@
             this.txtC = new System.Windows.Forms.Label();
             this.trbC = new System.Windows.Forms.TrackBar();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnBackgroundSymmetry = new System.Windows.Forms.Button();
             this.cbThreshold = new System.Windows.Forms.RadioButton();
             this.cbBrightness = new System.Windows.Forms.RadioButton();
             this.btnAutoThreshold = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@
             this.btnHistogram = new System.Windows.Forms.Button();
             this.btnContrastStretching = new System.Windows.Forms.Button();
             this.btnNegative = new System.Windows.Forms.Button();
-            this.btnBackgroundSymmetry = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSource)).BeginInit();
@@ -57,6 +57,11 @@
             this.groupBox1.Controls.Add(this.btnHistogram);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.SetChildIndex(this.groupBox2, 0);
+            this.groupBox1.Controls.SetChildIndex(this.groupBox3, 0);
+            this.groupBox1.Controls.SetChildIndex(this.btnHistogram, 0);
+            this.groupBox1.Controls.SetChildIndex(this.btnContrastStretching, 0);
+            this.groupBox1.Controls.SetChildIndex(this.btnNegative, 0);
             // 
             // btnBundle
             // 
@@ -123,6 +128,18 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Độ sáng + Tách ngưỡng";
             // 
+            // btnBackgroundSymmetry
+            // 
+            this.btnBackgroundSymmetry.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackgroundSymmetry.ForeColor = System.Drawing.Color.Red;
+            this.btnBackgroundSymmetry.Location = new System.Drawing.Point(296, 55);
+            this.btnBackgroundSymmetry.Name = "btnBackgroundSymmetry";
+            this.btnBackgroundSymmetry.Size = new System.Drawing.Size(88, 38);
+            this.btnBackgroundSymmetry.TabIndex = 12;
+            this.btnBackgroundSymmetry.Text = "Background-Symmetry";
+            this.btnBackgroundSymmetry.UseVisualStyleBackColor = true;
+            this.btnBackgroundSymmetry.Click += new System.EventHandler(this.btnBackgroundSymmetry_Click);
+            // 
             // cbThreshold
             // 
             this.cbThreshold.AutoSize = true;
@@ -185,7 +202,7 @@
             this.btnContrastStretching.Name = "btnContrastStretching";
             this.btnContrastStretching.Size = new System.Drawing.Size(101, 38);
             this.btnContrastStretching.TabIndex = 10;
-            this.btnContrastStretching.Text = "Mở rộng độ tương phản";
+            this.btnContrastStretching.Text = "Tăng độ tương phản";
             this.btnContrastStretching.UseVisualStyleBackColor = true;
             this.btnContrastStretching.Click += new System.EventHandler(this.btnContrastStretching_Click);
             // 
@@ -198,18 +215,6 @@
             this.btnNegative.Text = "Âm bản";
             this.btnNegative.UseVisualStyleBackColor = true;
             this.btnNegative.Click += new System.EventHandler(this.btnNegative_Click);
-            // 
-            // btnBackgroundSymmetry
-            // 
-            this.btnBackgroundSymmetry.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackgroundSymmetry.ForeColor = System.Drawing.Color.Red;
-            this.btnBackgroundSymmetry.Location = new System.Drawing.Point(296, 55);
-            this.btnBackgroundSymmetry.Name = "btnBackgroundSymmetry";
-            this.btnBackgroundSymmetry.Size = new System.Drawing.Size(88, 38);
-            this.btnBackgroundSymmetry.TabIndex = 12;
-            this.btnBackgroundSymmetry.Text = "Background-Symmetry";
-            this.btnBackgroundSymmetry.UseVisualStyleBackColor = true;
-            this.btnBackgroundSymmetry.Click += new System.EventHandler(this.btnBackgroundSymmetry_Click);
             // 
             // frmSpaceIndependent
             // 
